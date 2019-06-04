@@ -1,0 +1,51 @@
+---
+- name: Transfer and execute a script.
+  hosts: PHPIPAM
+  become: yes
+  tasks:
+
+  - block: #Block for debian
+
+    - name: update repository
+      apt: 
+         upgrade: yes
+         update_cache:yes
+         cache_valid_time: 86400
+
+    - name: Update repositories cache and install packages
+      apt:
+        name: apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+        update_cache: yes
+
+    - name: Add Docker PGP key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add docker apt repository
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs stable"
+        state: present
+
+    - name: Update repositories cache and install packages
+      apt:
+        name: docker-ce docker-ce-cli containerd.io
+        update_cache: yes
+
+    - name: Update repositories cache and install packages
+      apt:
+        name: docker-compose
+        update_cache: yes
+
+    - name: Update repositories cache and install packages
+      command:
+        name: usermod -aG docker $USER
+
+  when: ansible_os_family == "Debian"
+
+
+
+
+
+...
+                                                                                                          
