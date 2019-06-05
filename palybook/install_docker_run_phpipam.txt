@@ -4,44 +4,62 @@
   become: yes
   tasks:
 
-  - block: #Block for debian
+  - block: #Block for CentOS 7
+      - name: Upgrade all packages
+        yum: name=* state=latest
 
-    - name: update repository
-      apt: 
-         upgrade: yes
-         update_cache:yes
-         cache_valid_time: 86400
+      - name: Install yum utils
+        yum:
+          name: yum-utils
+          state: latest
 
-    - name: Update repositories cache and install packages
-      apt:
-        name: apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-        update_cache: yes
+      - name: Install device-mapper-persistent-data
+        yum:
+          name: device-mapper-persistent-data
+          state: latest
 
-    - name: Add Docker PGP key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
+      - name: Install lvm2
+        yum:
+          name: lvm2
+          state: latest
 
-    - name: Add docker apt repository
-      apt_repository:
-        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs stable"
-        state: present
+      - name: Add Docker repo
+        get_url:
+          url: https://download.docker.com/linux/centos/docker-ce.repo
+          dest: /etc/yum.repos.d/docer-ce.repo
 
-    - name: Update repositories cache and install packages
-      apt:
-        name: docker-ce docker-ce-cli containerd.io
-        update_cache: yes
+      - name: Enable Docker Edge repo
+        ini_file:
+          dest: /etc/yum.repos.d/docer-ce.repo
+          section: 'docker-ce-edge'
+          option: enabled
+          value: 0
 
-    - name: Update repositories cache and install packages
-      apt:
-        name: docker-compose
-        update_cache: yes
+      - name: Enable Docker Test repo
+        ini_file:
+          dest: /etc/yum.repos.d/docer-ce.repo
+          section: 'docker-ce-test'
+          option: enabled
+          value: 0
 
-    - name: Update repositories cache and install packages
-      command:
-        name: usermod -aG docker $USER
+      - name: Install Docker
+        package:
+          name: docker-ce
+          state: latest
 
-  when: ansible_os_family == "Debian"
+      - name: Start Docker service
+        service:
+          name: docker
+          state: started
+          enabled: yes
+
+      - name: Install and download docker compose
+        get_url:
+          url: https://github.com/docker/compose/releases/download/1.21.2/docker-compose-Linux-x86_64
+          dest: /usr/bin/docker-compose
+          mode: 0755
+
+    when: ansible_os_family == "RedHat"
 
 
 
