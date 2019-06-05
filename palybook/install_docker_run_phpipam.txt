@@ -59,6 +59,10 @@
           dest: /usr/bin/docker-compose
           mode: 0755
 
+      - name: run docker-compose.yml
+        docker_service:
+          project_src: /docker-compose/phpipam_SQL
+
     when: ansible_os_family == "RedHat"
 
 
