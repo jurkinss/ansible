@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ea78c3d-3177-49a0-8909-633e46f366a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/defaults/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defaults/cred" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker-compose.j2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/group_vars/PHPIPAM" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/hosts" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/hosts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/docker-compose.j2" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker-compose.j2" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tasks/readme.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -38,17 +35,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="83" column="3" lean-forward="true" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="3" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="6" selection-end-line="85" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/docker-compose.j2">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+            <state relative-caret-position="405">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -56,26 +53,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/defaults/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tasks/group_vars/PHPIPAM">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tasks/hosts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -92,9 +80,10 @@
         <option value="$PROJECT_DIR$/files/docker-compose.yml" />
         <option value="$PROJECT_DIR$/defaults/cred" />
         <option value="$PROJECT_DIR$/tasks/readme.md" />
-        <option value="$PROJECT_DIR$/defaults/main.yml" />
-        <option value="$PROJECT_DIR$/templates/docker-compose.j2" />
         <option value="$PROJECT_DIR$/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/templates/docker-compose.j2" />
+        <option value="$PROJECT_DIR$/tasks/group_vars/PHPIPAM" />
+        <option value="$PROJECT_DIR$/defaults/main.yml" />
         <option value="$PROJECT_DIR$/tasks/hosts" />
       </list>
     </option>
@@ -109,16 +98,17 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2820" />
-    <option name="y" value="40" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="2627" />
+    <option name="y" value="25" />
+    <option name="width" value="1853" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -130,13 +120,12 @@
             <path>
               <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
               <item name="ansible" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="defaults" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
               <item name="ansible" type="462c0819:PsiDirectoryNode" />
               <item name="tasks" type="462c0819:PsiDirectoryNode" />
-              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
@@ -147,7 +136,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,7 +172,7 @@
     <frame x="2627" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19147758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1936912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -217,55 +205,43 @@
     <entry file="file://$PROJECT_DIR$/playbook1.yml" />
     <entry file="file://$PROJECT_DIR$/files/phpipam_SQL" />
     <entry file="file://$PROJECT_DIR$/files/docker-compose" />
+    <entry file="file://$PROJECT_DIR$/files/docker-compose.yml" />
+    <entry file="file://$PROJECT_DIR$/tasks/group_vars/PHPIPAM" />
+    <entry file="file://$PROJECT_DIR$/defaults/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tasks/ansible.cfg">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="6" selection-end-line="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/defaults/main.yml">
+    <entry file="file://$PROJECT_DIR$/tasks/readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/group_vars/PHPIPAM">
+    <entry file="file://$PROJECT_DIR$/templates/docker-compose.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tasks/hosts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="83" column="3" lean-forward="true" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/docker-compose.j2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>

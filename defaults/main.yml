@@ -1,0 +1,7 @@
+MYSQL_ROOT_PASSWORD            : dockerphpipam
+MYSQL_USER                     : user
+MYSQL_PASSWORD                 : docker
+
+MYSQL_ENV_MYSQL_USER           : root
+MYSQL_ENV_MYSQL_ROOT_PASSWORD  : dockerphpipam
+MYSQL_ENV_MYSQL_HOST           : mysql
