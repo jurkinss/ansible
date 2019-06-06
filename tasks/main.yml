@@ -69,7 +69,7 @@
 
   - name: Copy file with owner and permissions
     template:
-      src: /home/ubuntu/sk/ansible/files/docker-compose.j2
+      src: /home/ubuntu/sk/ansible/templates/docker-compose.j2
       dest: /home/centos/ansible/files/docker-compose.yml
       owner: centos
       mode: '0644'
