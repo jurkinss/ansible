@@ -58,18 +58,28 @@
       dest: /usr/bin/docker-compose
       mode: 0755
 
+  - name: Creates directory
+    file:
+      path: /home/centos/ansible/files/
+      state: directory
+      owner: centos
+      group: centos
+      mode: 0775
+
+
   - name: Copy file with owner and permissions
     copy:
-      src: /home/ubuntu/ansible/docker-compose/phpipam_SQL
-      dest: /home/centos/ansible/files/docker-compose
+      src: /home/ubuntu/sk/ansible/files/docker-compose.yml
+      dest: /home/centos/ansible/files/docker-compose.yml
       owner: centos
       mode: '0644'
 
+  - name: run docker compose
+    shell: docker-compose up -d
+    args:
+      chdir: /home/centos/ansible/files/
 
-  - name: Run docker-compose file
-    docker-compose:
-      project_src: /home/centos/ansible/files/docker-compose
-      state: restarted
+
 
 ...
                                                                                                           
