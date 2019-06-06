@@ -59,7 +59,22 @@
           dest: /usr/bin/docker-compose
           mode: 0755
 
-      
+      - name: Copy file with owner and permissions
+        copy:
+        src: ~/ansible/docker-compose/phpipam_SQL
+        dest: ~/
+        owner: centos
+        mode: '0644'
+    
+
+      - name: Run docker-compose file
+        docker-compose:
+        project_src: ~/ansible/docker-compose/phpipam_SQL
+        state: restarted
+
+
+
+
 
     when: ansible_os_family == "RedHat"
 
