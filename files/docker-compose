@@ -13,7 +13,8 @@ services:
       - mysql
     image: pierrecdn/phpipam
     environment:
-      - MYSQL_ENV_MYSQL_USER=root
+      - MYSQL_ENV_MYSQL_USER=user
+      - MYSQL_PASSWORD=dockerphpipam
       - MYSQL_ENV_MYSQL_ROOT_PASSWORD=dockerphpipam
       - MYSQL_ENV_MYSQL_HOST=mysql
     ports:
