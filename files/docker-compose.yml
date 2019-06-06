@@ -11,6 +11,7 @@ services:
   ipam:
     depends_on:
       - mysql
+    restart: always
     image: pierrecdn/phpipam
     environment:
       - MYSQL_ENV_MYSQL_USER=user
