@@ -1,85 +1,102 @@
----
-- name: Transfer and execute a script.
-  hosts: PHPIPAM
-  become: yes
-  tasks:
+#- name: Update packages
+#  yum: name=* state=latest
 
-  - name: Upgrade all packages
-    yum: name=* state=latest
+- name: Install packages
+  yum: name= {{ item }} state=latest
+  loop:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
 
-  - name: Install yum utils
-    yum:
-      name: yum-utils
-      state: latest
-
-  - name: Install device-mapper-persistent-data
-    yum:
-      name: device-mapper-persistent-data
-      state: latest
-
-  - name: Install lvm2
-    yum:
-      name: lvm2
-      state: latest
-
-  - name: Add Docker repo
-    get_url:
-      url: https://download.docker.com/linux/centos/docker-ce.repo
-      dest: /etc/yum.repos.d/docer-ce.repo
-
-  - name: Enable Docker Edge repo
-    ini_file:
-      dest: /etc/yum.repos.d/docer-ce.repo
-      section: 'docker-ce-edge'
-      option: enabled
-      value: 0
-
-  - name: Enable Docker Test repo
-    ini_file:
-      dest: /etc/yum.repos.d/docer-ce.repo
-      section: 'docker-ce-test'
-      option: enabled
-      value: 0
-
-  - name: Install Docker
-    package:
-      name: docker-ce
-      state: latest
-
-  - name: Start Docker service
-    service:
-      name: docker
-      state: started
-      enabled: yes
-
-  - name: Install and download docker compose
-    get_url:
-      url: https://github.com/docker/compose/releases/download/1.21.2/docker-compose-Linux-x86_64
-      dest: /usr/bin/docker-compose
-      mode: 0755
-
-  - name: Creates directory
-    file:
-      path: /home/centos/ansible/files/
-      state: directory
-      owner: centos
-      group: centos
-      mode: 0775
+- name: Creates directory
+  file:
+    path: /root/.ansible/tmp
+    state: directory
+    mode: 0775
 
 
-  - name: Copy file with owner and permissions
-    template:
-      src: /home/ubuntu/sk/ansible/templates/docker-compose.j2
-      dest: /home/centos/ansible/files/docker-compose.yml
-      owner: centos
-      mode: '0644'
+- name: Add Docker repo
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docer-ce.repo
 
-  - name: run docker compose
-    shell: docker-compose up -d
-    args:
-      chdir: /home/centos/ansible/files/
+
+- name: Enable Docker Edge repo
+  ini_file:
+    dest: /etc/yum.repos.d/docer-ce.repo
+    section: 'docker-ce-edge'
+    option: enabled
+
+
+- name: Enable Docker Test repo
+  ini_file:
+    dest: /etc/yum.repos.d/docer-ce.repo
+    section: 'docker-ce-test'
+    option: enabled
+
+- name: Install Docker
+  package:
+    name: docker-ce
+    state: latest
+
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Install and download docker compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.21.2/docker-compose-Linux-x86_64
+    dest: /usr/bin/docker-compose
+    mode: 0755
+
+- name: create directory if they don't exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: centos
+    group: centos
+    mode: 0775
+  with_items:
+    - /home/centos/ansible/
+    - /home/cento/proxy/
+    - /home/centos/config/
+    - /home/centos/html/
+    - /home/centos/ssl/
+
+
+- name: Copy Template with owner and permissions
+  template:
+    src: docker-compose.j2
+    dest: /home/centos/ansible/docker-compose.yml
+    owner: centos
+    mode: 0644
+
+- name: Copy default.conf with owner and permissions
+  copy:
+    src: default.conf
+    dest: /home/centos/config/default.conf
+    owner: centos
+    mode: 0644
+
+- name: Copy key with owner and permissions
+  copy:
+    src: "{{ item }}"
+    dest: /home/centos/ssl/
+    owner: centos
+    mode: 0644
+  with_items:
+    - cert.key
+    - cert.pem
+
+- name: run docker compose
+  shell: docker-compose up -d
+  args:
+    chdir: /home/centos/ansible
 
 
 
 ...
-                                                                                                          
+
+

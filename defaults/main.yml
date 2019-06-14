@@ -1,7 +1,14 @@
-MYSQL_ROOT_PASSWORD            : dockerphpipam
-MYSQL_USER                     : user
-MYSQL_PASSWORD                 : docker
+MYSQL_ROOT_PASSWORD: 4e292349aafjasHfafas!
+MYSQL_DATABASE: phpipam
+MYSQL_USER: phpipam
+MYSQL_PASSWORD: Doska43252bru>
 
-MYSQL_ENV_MYSQL_USER           : root
-MYSQL_ENV_MYSQL_ROOT_PASSWORD  : dockerphpipam
-MYSQL_ENV_MYSQL_HOST           : mysql
+
+PHPIPAM_DB_HOST: db
+PHPIPAM_DB_NAME: phpipam
+PHPIPAM_DB_PASS: Doska43252bru>
+PHPIPAM_DB_USER: phpipam
+
+
+#admin ipamadmin default paas to phpipam then change
+
